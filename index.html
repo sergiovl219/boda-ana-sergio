@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Boda Ana y Sergio | 10 de Octubre 2026</title>
+    <meta name="description" content="Invitación de boda de Ana y Sergio. Acompáñanos a celebrar nuestra unión el 10 de octubre de 2026 en Pachuca, Hidalgo.">
+    <meta name="theme-color" content="#005A34">
+    
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content="Boda Ana & Sergio">
+    <meta property="og:description" content="¡Nos casamos! Acompáñanos a celebrar el 10 de octubre de 2026.">
+    <meta property="og:image" content="/assets/images/hero-bg.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes elegantes de Google Fonts y CDN (Indian) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/indian" rel="stylesheet">
+    
+    <!-- Precargar assets críticos -->
+    <link rel="preload" as="image" href="/assets/images/hero-bg.jpg">
+    
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+
+    <!-- DEFINICIÓN DEL DIVISOR ROMÁNTICO (Corazón minimalista) -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="romantic-divider">
+                <!-- Línea izquierda con punto -->
+                <line x1="5" y1="14" x2="43" y2="14" stroke="var(--dorado)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="48" cy="14" r="1.5" fill="var(--dorado)"/>
+                
+                <!-- Corazón Sólido central estilizado en verde esmeralda -->
+                <path d="M70,25 C54,14 59,3 65,3 C68,3 70,6.5 70,6.5 C70,6.5 72,3 75,3 C81,3 86,14 70,25 Z" fill="var(--verde-esmeralda)" />
+                
+                <!-- Línea derecha con punto -->
+                <circle cx="92" cy="14" r="1.5" fill="var(--dorado)"/>
+                <line x1="97" y1="14" x2="135" y2="14" stroke="var(--dorado)" stroke-width="1.5" stroke-linecap="round"/>
+            </g>
+        </defs>
+    </svg>
+
+    <!-- REPRODUCTOR DE MÚSICA DE FONDO - Kika Edgar -->
+    <audio id="musica-fondo" loop autoplay>
+        <source src="/assets/audio/como-fue.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="mobile-container">
+        
+        <!-- FONDO FIJO -->
+        <div class="fixed-bg"></div>
+
+        <!-- BOTÓN FLOTANTE MÚSICA (Fijo en pantalla) -->
+        <a href="#" id="btn-musica" class="btn-musica-flotante">
+            <svg id="icono-musica" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span class="texto-pausar" id="texto-musica">Play</span>
+        </a>
+
+        <!-- CAPA DE CONTENIDO SCROLL -->
+        <div class="content-layer">
+            
+            <!-- 1. PORTADA TIPO REVISTA -->
+            <section class="hero fade-in">
+                
+                <!-- Centro de Portada -->
+                <div class="hero-center">
+                    <hr class="hero-hr">
+                    <h1 class="hero-name">Ana</h1>
+                    
+                    <div class="hero-y">y</div>
+                    
+                    <h1 class="hero-name">Sergio</h1>
+                    <hr class="hero-hr">
+                    
+                    <h2 class="hero-subtitle">¡Nos Casamos!</h2>
+                </div>
+
+                <!-- Flecha Inferior -->
+                <div class="hero-bottom">
+                    <svg class="chevron-down" viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- 2. WRAPPER DE TARJETAS (Glassmorphism) -->
+            <div class="secciones-wrapper">
+                
+                <!-- CARD: Estás Invitado -->
+                <section class="card fade-in" id="musica">
+                    <h2>Estás invitado</h2>
+                    <svg class="romantic-divider" viewBox="0 0 140 30"><use href="#romantic-divider"></use></svg>
+                    <p>Nos encantaría que seas parte de este momento tan especial para nosotros.</p>
+                </section>
+
+                <!-- CARD: Falta Poco -->
+                <section class="card card-gris fade-in">
+                    <h2>¡Falta poco!</h2>
+                    <svg class="romantic-divider" viewBox="0 0 140 30"><use href="#romantic-divider"></use></svg>
+                    <p>La cuenta regresiva para nuestra boda ha comenzado.</p>
+                    
+                    <div class="contador-grid" id="contador">
+                        <div class="contador-item">
+                            <span class="contador-numero" id="dias">00</span>
+                            <span class="contador-etiqueta">Días</span>
+                        </div>
+                        <div class="contador-item">
+                            <span class="contador-numero" id="horas">00</span>
+                            <span class="contador-etiqueta">Hrs</span>
+                        </div>
+                        <div class="contador-item">
+                            <span class="contador-numero" id="mins">00</span>
+                            <span class="contador-etiqueta">Min</span>
+                        </div>
+                        <div class="contador-item">
+                            <span class="contador-numero" id="segs">00</span>
+                            <span class="contador-etiqueta">Seg</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARD: Itinerario -->
+                <section class="card fade-in">
+                    <h2>Itinerario</h2>
+                    <svg class="romantic-divider" viewBox="0 0 140 30"><use href="#romantic-divider"></use></svg>
+                    <p>Acompáñanos a celebrar nuestro gran día en Pachuca, Hidalgo.</p>
+                    
+                    <div class="timeline">
+                        <div class="evento fade-in">
+                            <div class="evento-hora">17:30 hrs</div>
+                            <div class="evento-titulo">Ceremonia Religiosa</div>
+                            <div class="evento-lugar">Iglesia <span class="lugar-destacado">"La Villita"</span><br>Pachuca de Soto, Hgo.</div>
+                            <a href="https://maps.app.goo.gl/TU_LINK_AQUI" target="_blank" class="btn-mapa">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Ver Mapa
+                            </a>
+                            <img src="/assets/images/ceremonia-manos-anillo.jpg" alt="Manos y Anillo" class="foto-timeline" loading="lazy">
+                        </div>
+
+                        <div class="evento fade-in">
+                            <div class="evento-hora">19:00 hrs</div>
+                            <div class="evento-titulo">Recepción</div>
+                            <div class="evento-lugar"><span class="lugar-destacado">Salón Aleria</span>, Zona Plateada</div>
+                            <a href="https://maps.app.goo.gl/TU_LINK_AQUI" target="_blank" class="btn-mapa">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Ver Mapa
+                            </a>
+                            <img src="/assets/images/recepcion-detalle-anillo.jpg" alt="Detalle de Anillo" class="foto-timeline" loading="lazy">
+                        </div>
+
+                        <div class="evento fade-in">
+                            <div class="evento-hora">19:30 hrs</div>
+                            <div class="evento-titulo">Boda Civil</div>
+                            <div class="evento-lugar">Jardín del <span class="lugar-destacado">Salón Aleria</span></div>
+                            <img src="/assets/images/boda-civil.jpg" alt="Boda Civil" class="foto-timeline" loading="lazy">
+                        </div>
+
+                        <div class="evento fade-in">
+                            <div class="evento-hora">20:00 hrs</div>
+                            <div class="evento-titulo">Cena y Música en Vivo</div>
+                            <div class="evento-lugar">Amenizado por <span class="color-redvelvet">The Red Velvet Swing</span></div>
+                            <a href="https://www.instagram.com/theredvelvetswing?igsh=ZTNidmlyZGM5eHBs" target="_blank" class="btn-mapa" style="background-color: var(--dorado); color: var(--texto-principal);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                Ver su Instagram
+                            </a>
+                        </div>
+
+                        <div class="evento fade-in">
+                            <div class="evento-hora">02:00 hrs</div>
+                            <div class="evento-titulo">Cierre del Evento</div>
+                            <div class="evento-lugar">¡Gracias por acompañarnos!</div>
+                            <img src="/assets/images/cierre-evento.jpg" alt="Cierre del Evento" class="foto-timeline" loading="lazy">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARD: Detalles -->
+                <section class="card card-gris fade-in">
+                    <h2>Detalles</h2>
+                    <svg class="romantic-divider" viewBox="0 0 140 30"><use href="#romantic-divider"></use></svg>
+                    <p>Información importante a tomar en cuenta para el evento.</p>
+                    
+                    <div class="tarjetas-grid">
+                        <div class="tarjeta-info fade-in">
+                            <div class="icono-info">
+                                <!-- Ícono de Coche Estilizado (Dos tonos) -->
+                                <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11" stroke="var(--dorado)" stroke-width="1.2"/>
+                                    <rect x="2" y="11" width="20" height="7" rx="2" stroke="var(--verde-esmeralda)" stroke-width="1.2" fill="rgba(0, 90, 52, 0.05)"/>
+                                    <circle cx="5.5" cy="14.5" r="1.5" stroke="var(--dorado)" stroke-width="1.2"/>
+                                    <circle cx="18.5" cy="14.5" r="1.5" stroke="var(--dorado)" stroke-width="1.2"/>
+                                    <path d="M10 14h4M11 16h2" stroke="var(--verde-esmeralda)" stroke-width="1.2"/>
+                                </svg>
+                            </div>
+                            <h3>Valet Parking</h3>
+                            <p>Para su comodidad, el salón cuenta con servicio de valet parking durante todo el evento.</p>
+                            <p class="resaltado" style="font-size: 1.2rem; margin-top: 10px;">Costo: $80 MXN</p>
+                        </div>
+
+                        <div class="tarjeta-info fade-in">
+                            <div class="icono-info">
+                                <!-- Ícono de Traje/Vestimenta (Dos tonos) -->
+                                <svg class="icono-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 4a2 2 0 0 0-2 2c0 1 1 2 2 2a2 2 0 0 1 2 2v1" stroke="var(--dorado)" stroke-width="1.2"/>
+                                    <path d="M12 11l-9 5.5a2 2 0 0 0 1 3.5h16a2 2 0 0 0 1-3.5z" stroke="var(--verde-esmeralda)" stroke-width="1.2" fill="rgba(0, 90, 52, 0.05)"/>
+                                    <path d="M12 11l-3 5h6z" stroke="var(--dorado)" stroke-width="1.2"/>
+                                    <path d="M10 14l-2-2v4zM14 14l2-2v4z" fill="var(--verde-esmeralda)"/>
+                                    <circle cx="12" cy="14" r="1" fill="var(--dorado)"/>
+                                </svg>
+                            </div>
+                            <h3>Código de Vestimenta</h3>
+                            <p style="font-size: 1.2rem; font-weight: 500; color: var(--texto-principal);">Formal de Noche Otoñal</p>
+                            <hr style="border:0; height:1px; background:rgba(212,175,55,0.3); margin: 15px 0;">
+                            <p style="font-size: 0.95rem;">
+                                Nos encanta el color, pero rogamos amablemente reservar el <span class="resaltado">Blanco</span> para la novia y el <span class="resaltado">Verde Esmeralda</span> para las damas de honor.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARD: Mesa de Regalos -->
+                <section class="card fade-in">
+                    <h2>Mesa de Regalos</h2>
+                    <svg class="romantic-divider" viewBox="0 0 140 30"><use href="#romantic-divider"></use></svg>
+                    <p>El regalo más grande que podemos recibir es contar con su presencia en este día tan especial.</p>
+                    <p>Si desean tener un detalle adicional con nosotros, pueden hacerlo en nuestra mesa de regalos.</p>
+                    
+                    <!-- Nuevo botón Liverpool -->
+                    <a href="https://www.liverpool.com.mx/" target="_blank" class="btn-accion btn-liverpool">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--dorado)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                        Ver mesa en Liverpool
+                    </a>
+                </section>
+
+                <!-- CARD: Confirmación -->
+                <section class="card card-gris fade-in">
+                    <h2>Confirmación</h2>
+                    <svg class="romantic-divider" viewBox="0 0 140 30"><use href="#romantic-divider"></use></svg>
+                    <p>Por favor, confirma tu asistencia antes del <strong>10 de Septiembre de 2026</strong> para considerarte en nuestros lugares.</p>
+                    
+                    <div id="texto-pases" class="mensaje-pases fade-in">
+                        Cargando tu invitación...
+                    </div>
+
+                    <!-- Nuevo botón WhatsApp -->
+                    <a href="#" id="btn-confirmar" class="btn-accion btn-whatsapp" target="_blank">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--dorado)" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Confirmar por WhatsApp
+                    </a>
+                </section>
+
+                <!-- CARD: Sello Footer -->
+                <div class="footer-sello fade-in">
+                    <div class="sello-cuadro">
+                        <img src="/assets/images/monograma-sello.jpg" alt="Monograma Ana y Sergio">
+                    </div>
+                </div>
+
+            </div> <!-- Cierre secciones-wrapper -->
+        </div> <!-- Cierre content-layer -->
+    </div> <!-- Cierre mobile-container -->
+
+    <!-- SCRIPT DE LÓGICA -->
+    <script src="/src/js/main.js" type="module"></script>
+</body>
+</html>

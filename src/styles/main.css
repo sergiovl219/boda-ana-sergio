@@ -1,0 +1,348 @@
+/* ================================================
+   BODA ANA & SERGIO — Estilos Principales
+   ================================================ */
+
+/* --- VARIABLES DE DISEÑO --- */
+:root {
+    --verde-esmeralda: #005A34; /* Verde esmeralda profundo */
+    --dorado: #D4AF37;          /* Dorado clásico */
+    --blanco: #FFFFFF;
+    --texto-principal: #2C2C2C; /* Gris muy oscuro */
+}
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Montserrat da el toque moderno, limpio y vanguardista al cuerpo del texto */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000000; /* Fondo base oscuro */
+    color: var(--texto-principal);
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* --- CONTENEDOR PRINCIPAL MÓVIL --- */
+.mobile-container {
+    width: 100%;
+    max-width: 480px; 
+    min-height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* --- FONDO GLOBAL FIJO (FOTO) --- */
+.fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    background-image: url('/assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Filtro oscuro tipo revista sobre la foto */
+.fixed-bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.6) 100%);
+}
+
+/* --- CAPA DE CONTENIDO --- */
+.content-layer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* --- ANIMACIONES SCROLL --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   1. HERO SECTION (DISEÑO REVISTA)
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 20px 20px 20px;
+    color: var(--blanco);
+}
+
+.hero-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.hero-hr {
+    width: 70px;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-name {
+    font-family: 'Indian', cursive;
+    font-size: 5rem;
+    color: var(--blanco);
+    line-height: 0.8;
+    font-weight: 400;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+    padding: 5px 0;
+}
+
+.hero-y {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-style: italic;
+    color: var(--dorado);
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    z-index: 2;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--dorado);
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9), 0px 0px 15px rgba(0,0,0,0.8);
+}
+
+/* Flecha Inferior */
+.hero-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.chevron-down {
+    width: 35px;
+    height: 35px;
+    stroke: var(--blanco);
+    stroke-width: 1.5;
+    fill: none;
+    animation: bounce 2s infinite;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* =========================================
+   2. BOTÓN FLOTANTE MÚSICA
+   ========================================= */
+.btn-musica-flotante {
+    position: fixed;
+    right: 15px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.25);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.btn-musica-flotante.reproduciendo {
+    background-color: rgba(212, 175, 55, 0.4);
+    border-color: var(--dorado);
+    animation: pulse-music 2s infinite;
+}
+
+@keyframes pulse-music {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.btn-musica-flotante:active { transform: scale(0.9); }
+
+.texto-pausar {
+    position: absolute;
+    bottom: -20px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* =========================================
+   3. SECCIONES DE CONTENIDO (CARDS CRISTAL)
+   ========================================= */
+.secciones-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 15px 80px 15px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+.card-gris { background-color: rgba(245, 245, 245, 0.95); }
+
+h2 { 
+    font-family: 'Playfair Display', serif; 
+    color: var(--verde-esmeralda); 
+    font-size: 2.2rem; 
+    font-style: italic;
+    margin-bottom: 5px; 
+}
+
+p { 
+    font-size: 1.05rem; 
+    line-height: 1.7; 
+    margin-bottom: 15px; 
+    font-weight: 300; 
+}
+
+.romantic-divider { 
+    width: 140px; 
+    height: 30px; 
+    margin: 5px auto 25px auto; 
+    display: block; 
+}
+
+/* =========================================
+   4. ELEMENTOS INTERNOS DE CARDS
+   ========================================= */
+
+/* Contador Regresivo */
+.contador-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; padding: 20px 10px; background-color: transparent; border: 1px solid rgba(0, 90, 52, 0.15); border-radius: 15px; }
+.contador-item { display: flex; flex-direction: column; align-items: center; position: relative; }
+.contador-item:not(:last-child)::after { content: ':'; position: absolute; right: -8px; top: 10px; font-size: 2rem; color: var(--dorado); font-family: 'Playfair Display', serif; }
+.contador-numero { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--verde-esmeralda); line-height: 1; }
+.contador-etiqueta { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 500; }
+
+/* Timeline / Itinerario */
+.timeline { position: relative; margin-top: 30px; text-align: left; z-index: 1; }
+.timeline::before { content: ''; position: absolute; left: 20px; top: 0; height: 100%; width: 2px; background-color: rgba(212, 175, 55, 0.5); z-index: -1; }
+.evento { position: relative; padding-left: 55px; margin-bottom: 45px; }
+.evento:last-child { margin-bottom: 0; }
+.evento::before { content: ''; position: absolute; left: 13px; top: 6px; width: 12px; height: 12px; background-color: var(--verde-esmeralda); border: 2px solid var(--blanco); border-radius: 50%; box-shadow: 0 0 0 2px var(--dorado); z-index: 2; }
+.evento-hora { font-family: 'Montserrat', sans-serif; color: var(--dorado); font-style: normal; font-size: 1.3rem; font-weight: 600; margin-bottom: 5px; line-height: 1.1; }
+.evento-titulo { font-weight: 500; color: var(--verde-esmeralda); font-size: 1.2rem; margin-bottom: 8px; }
+.evento-lugar { font-size: 0.95rem; margin-bottom: 12px; line-height: 1.4; font-weight: 300; }
+
+/* Botones de mapa */
+.btn-mapa { display: inline-flex; align-items: center; justify-content: center; background-color: var(--verde-esmeralda); color: var(--blanco); text-decoration: none; padding: 8px 22px; border-radius: 25px; font-size: 0.85rem; font-weight: 400; letter-spacing: 1px; margin-bottom: 15px; gap: 8px; }
+.foto-timeline { width: 100%; border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+/* Tarjetas de información */
+.tarjetas-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.tarjeta-info { background-color: transparent; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 12px; padding: 25px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.icono-info { margin-bottom: 15px; display: inline-block; }
+.tarjeta-info h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; color: var(--dorado); margin-bottom: 12px; letter-spacing: 1px; }
+.resaltado { color: var(--verde-esmeralda); font-weight: 500; }
+
+/* Clases de texto destacado */
+.lugar-destacado { font-family: 'Playfair Display', serif; color: var(--dorado); font-weight: 600; font-size: 1.1rem; font-style: italic; }
+.color-redvelvet { font-family: 'Playfair Display', serif; color: #8C1C2A; font-weight: 600; font-size: 1.1rem; font-style: italic; }
+.icono-svg { width: 55px; height: 55px; }
+
+/* =========================================
+   5. BOTONES DE ACCIÓN
+   ========================================= */
+.btn-accion { 
+    display: flex; align-items: center; justify-content: center; 
+    padding: 15px 30px; border-radius: 30px; font-weight: 500; 
+    font-size: 1.05rem; letter-spacing: 0.5px; width: 90%; margin: 20px auto 10px; 
+    text-decoration: none; gap: 10px; transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--dorado);
+}
+.btn-accion:active { transform: scale(0.97); }
+
+.btn-liverpool { 
+    background-color: rgba(255, 255, 255, 0.6); 
+    color: var(--verde-esmeralda); 
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15); 
+}
+.btn-whatsapp { 
+    background-color: var(--verde-esmeralda); 
+    color: var(--blanco); 
+    width: 100%;
+    box-shadow: 0 6px 15px rgba(0, 90, 52, 0.3); 
+}
+
+/* Mensaje de pases */
+.mensaje-pases { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: var(--verde-esmeralda); margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 10px; border-left: 4px solid var(--dorado); }
+
+/* =========================================
+   6. FOOTER / SELLO
+   ========================================= */
+.footer-sello { 
+    display: flex; 
+    justify-content: center; 
+    padding: 10px 0 40px 0; 
+}
+.sello-cuadro {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sello-cuadro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.45);
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+}
