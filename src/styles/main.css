@@ -346,3 +346,148 @@ p {
     mix-blend-mode: multiply;
     opacity: 0.9;
 }
+
+/* =========================================
+   7. SPLASH DE BIENVENIDA (Autoplay Audio)
+   ========================================= */
+.splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: linear-gradient(160deg, #002A18 0%, #003D24 30%, #005A34 60%, #004A2C 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.8s ease-out;
+}
+
+/* Textura sutil sobre el fondo */
+.splash-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.splash-overlay.splash-oculto {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.splash-contenido {
+    text-align: center;
+    color: var(--blanco);
+    z-index: 1;
+    padding: 30px;
+    animation: splash-aparecer 1s ease-out;
+}
+
+@keyframes splash-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.splash-ornamento {
+    font-size: 1.8rem;
+    color: var(--dorado);
+    margin-bottom: 25px;
+    letter-spacing: 10px;
+    opacity: 0.8;
+    animation: splash-brillo 3s ease-in-out infinite;
+}
+
+@keyframes splash-brillo {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.splash-subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.splash-nombres {
+    font-family: 'Indian', cursive;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--blanco);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.splash-nombres span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--dorado);
+    font-size: 2.5rem;
+    margin: 0 8px;
+}
+
+.splash-fecha {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: var(--dorado);
+    margin-bottom: 40px;
+}
+
+.splash-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    background: transparent;
+    border: 1.5px solid var(--dorado);
+    color: var(--dorado);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: splash-pulso 2.5s ease-in-out infinite;
+}
+
+.splash-boton:hover,
+.splash-boton:active {
+    background: var(--dorado);
+    color: var(--verde-esmeralda);
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+@keyframes splash-pulso {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.3); }
+    50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+}
+
+.splash-nota {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 25px;
+    letter-spacing: 1px;
+}

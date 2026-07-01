@@ -51,17 +51,22 @@ document.addEventListener("DOMContentLoaded", function() {
         alternarMusica();
     });
 
-    // Autoplay de respaldo: primer tap/click del usuario
+    // Autoplay: intentar reproducir automáticamente,
+    // si el navegador lo bloquea, iniciar con el primer toque/clic del usuario
+    audioFondo.play().catch(() => {
+        console.log("Autoplay bloqueado. Se iniciará con la primera interacción del usuario.");
+    });
+
     function iniciarAudioAutomatico() {
         if (!reproduciendo) {
             audioFondo.play().catch(error => {
-                console.log("El navegador bloqueó el autoplay. Se requiere tap del usuario.");
+                console.log("No se pudo reproducir el audio:", error);
             });
-            document.body.removeEventListener('click', iniciarAudioAutomatico);
-            document.body.removeEventListener('touchstart', iniciarAudioAutomatico);
         }
+        document.body.removeEventListener('click', iniciarAudioAutomatico);
+        document.body.removeEventListener('touchstart', iniciarAudioAutomatico);
     }
-    
+
     document.body.addEventListener('click', iniciarAudioAutomatico, { once: true });
     document.body.addEventListener('touchstart', iniciarAudioAutomatico, { once: true });
 
