@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const audioFondo = document.getElementById('musica-fondo');
     const iconoMusica = document.getElementById('icono-musica');
     const textoMusica = document.getElementById('texto-musica');
-    let reproduciendo = false;
+    let reproduciendo = true;
 
     // Íconos SVG
     const ICONO_PAUSA = '<path d="M6 4h4v16H6zM14 4h4v16h-4z"></path>';
@@ -51,24 +51,28 @@ document.addEventListener("DOMContentLoaded", function() {
         alternarMusica();
     });
 
-    // Autoplay: intentar reproducir automáticamente,
-    // si el navegador lo bloquea, iniciar con el primer toque/clic del usuario
-    audioFondo.play().catch(() => {
-        console.log("Autoplay bloqueado. Se iniciará con la primera interacción del usuario.");
-    });
+    // Autoplay: al abrir la invitación desde el splash
+    const splashOverlay = document.getElementById('splash-bienvenida');
+    const btnAbrir = document.getElementById('btn-abrir-invitacion');
 
-    function iniciarAudioAutomatico() {
-        if (!reproduciendo) {
-            audioFondo.play().catch(error => {
-                console.log("No se pudo reproducir el audio:", error);
-            });
-        }
-        document.body.removeEventListener('click', iniciarAudioAutomatico);
-        document.body.removeEventListener('touchstart', iniciarAudioAutomatico);
+    function abrirInvitacion() {
+        // Reproducir música (permitido porque es gesto del usuario)
+        audioFondo.play().catch(error => {
+            console.log("No se pudo reproducir el audio:", error);
+        });
+
+        // Animar y ocultar el splash
+        splashOverlay.classList.add('splash-oculto');
+        splashOverlay.addEventListener('transitionend', () => {
+            splashOverlay.style.display = 'none';
+        });
     }
 
-    document.body.addEventListener('click', iniciarAudioAutomatico, { once: true });
-    document.body.addEventListener('touchstart', iniciarAudioAutomatico, { once: true });
+    btnAbrir.addEventListener('click', abrirInvitacion);
+    btnAbrir.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        abrirInvitacion();
+    });
 
     // =========================================
     // 2. ANIMACIONES FADE IN (IntersectionObserver)
