@@ -129,20 +129,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const parametrosURL = new URLSearchParams(window.location.search);
     const nombreInvitado = parametrosURL.get('invitado');
     const numPases = parametrosURL.get('pases');
+    const contrayente = parametrosURL.get('contrayente');
     
     const textoPases = document.getElementById('texto-pases');
     const btnConfirmar = document.getElementById('btn-confirmar');
     
-    // ⚠️ CAMBIAR este número por el número real de WhatsApp
-    const telefonoWhatsApp = "5217710000000"; 
+    // Números de WhatsApp: Ana 7711279279, Sergio 7712386266
+    let telefonoWhatsApp = "5217712386266"; // Por defecto Sergio
+    
+    if (contrayente && contrayente.toLowerCase() === 'ana') {
+        telefonoWhatsApp = "5217711279279";
+    } else if (contrayente && contrayente.toLowerCase() === 'sergio') {
+        telefonoWhatsApp = "5217712386266";
+    }
 
     if (nombreInvitado && numPases) {
         textoPases.innerHTML = `¡Hola, ${nombreInvitado}! <br> Tienen <span style="font-weight:700;">${numPases} pases</span> reservados.`;
-        const mensaje = `¡Hola Ana y Sergio! 🎉 Confirmo la asistencia de *${nombreInvitado}*. Usaremos nuestros ${numPases} pases para su boda el 10 de octubre. ¡Qué emoción!`;
+        const mensaje = `¡Hola! 🎉 Confirmo la asistencia de *${nombreInvitado}*. Usaremos nuestros ${numPases} pases para la boda el 10 de octubre. ¡Qué emoción!`;
         btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
     } else {
         textoPases.innerHTML = `¡Nos encantará verte ahí!`;
-        const mensaje = `¡Hola Ana y Sergio! 🎉 Confirmo mi asistencia a su boda el 10 de octubre de 2026. ¡Qué emoción!`;
+        const mensaje = `¡Hola! 🎉 Confirmo mi asistencia a la boda el 10 de octubre de 2026. ¡Qué emoción!`;
         btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
     }
 });
