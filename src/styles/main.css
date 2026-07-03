@@ -351,7 +351,7 @@ p {
    7. SPLASH DE BIENVENIDA â€” SOBRE CLÃSICO
    ========================================= */
 
-/* Fondo de la pantalla: tono neutro suave */
+/* Fondo de la pantalla: tono neutro suave, limpio */
 .splash-overlay {
     position: fixed;
     top: 0;
@@ -363,8 +363,8 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Fondo tipo papel de carta antiguo */
-    background: linear-gradient(145deg, #e8e0d0 0%, #d9cfc0 50%, #e2d9c8 100%);
+    /* Fondo neutral suave tipo estudio */
+    background: linear-gradient(135deg, #f3f2ef 0%, #e5e3de 50%, #dcdad4 100%);
     opacity: 1;
     transition: opacity 0.8s ease-out;
 }
@@ -377,16 +377,16 @@ p {
 /* ---- EL SOBRE ---- */
 .sobre {
     position: relative;
-    width: min(320px, 85vw);
-    /* ProporciÃ³n clÃ¡sica de un sobre: ~3:2 */
+    width: min(370px, 90vw);
+    /* Proporción clásica de un sobre: ~3:2 */
     aspect-ratio: 3 / 2;
     cursor: pointer;
     /* container-type necesario para las unidades cqh/cqw en las solapas */
     container-type: size;
     animation: sobre-aparecer 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-    /* Sombra que da profundidad a un objeto fÃ­sico */
-    filter: drop-shadow(0 18px 35px rgba(80,60,20,0.25))
-            drop-shadow(0 6px 12px rgba(80,60,20,0.15));
+    /* Sombra que da profundidad a un objeto físico */
+    filter: drop-shadow(0 18px 35px rgba(80,60,20,0.18))
+            drop-shadow(0 6px 12px rgba(80,60,20,0.12));
     -webkit-tap-highlight-color: transparent;
     user-select: none;
 }
@@ -407,185 +407,27 @@ p {
     transition: transform 0.15s ease;
 }
 
-/* ---- BASE DEL SOBRE (rectÃ¡ngulo marfil) ---- */
-/* El sobre-interior actÃºa como la base visible */
-.sobre-interior {
-    position: absolute;
-    inset: 0;
-    border-radius: 3px;
-    /* Marfil cÃ¡lido con sutil gradiente de papel */
-    background: linear-gradient(160deg, #fdfaf3 0%, #f5eedb 40%, #faf5e8 100%);
-    border: 1.5px solid #d4af37;
-    overflow: hidden;
+/* ---- VECTOR DEL SOBRE (VÍA SVG) ---- */
+.sobre-vector {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible; /* Permite que las sombras de la solapa sobresalgan */
 }
 
-/* PatrÃ³n diagonal interior del sobre (lÃ­neas cruzadas doradas sutiles) */
-.sobre-interior::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 14px,
-            rgba(212, 175, 55, 0.07) 14px,
-            rgba(212, 175, 55, 0.07) 15px
-        ),
-        repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 14px,
-            rgba(212, 175, 55, 0.07) 14px,
-            rgba(212, 175, 55, 0.07) 15px
-        );
-}
-
-/* Borde interior dorado (marco de carta) */
-.sobre-interior::after {
-    content: '';
-    position: absolute;
-    inset: 6px;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    border-radius: 2px;
-    pointer-events: none;
-}
-
-/* ---- SOLAPAS DEL SOBRE (triÃ¡ngulos) ---- */
-.sobre-flap {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-/* Solapa izquierda */
-.sobre-flap-izq {
-    top: 0;
-    left: 0;
-    border-width: 50cqh 0 50cqh 50cqw;
-    border-color: transparent transparent transparent #f0e8d0;
-    /* Sombra interna para dar profundidad */
-    filter: drop-shadow(2px 0 4px rgba(150,120,50,0.12));
-    z-index: 1;
-}
-
-/* Solapa derecha */
-.sobre-flap-der {
-    top: 0;
-    right: 0;
-    border-width: 50cqh 50cqw 50cqh 0;
-    border-color: transparent #f0e8d0 transparent transparent;
-    filter: drop-shadow(-2px 0 4px rgba(150,120,50,0.12));
-    z-index: 1;
-}
-
-/* Base inferior */
-.sobre-flap-base {
-    bottom: 0;
-    left: 0;
-    border-width: 0 50cqw 42cqh 50cqw;
-    border-color: transparent transparent #f5efde transparent;
-    filter: drop-shadow(0 -2px 6px rgba(120,90,20,0.1));
-    z-index: 2;
-}
-
-/* Solapa superior (la que se "dobla" con el sello) */
-.sobre-flap-top {
-    top: 0;
-    left: 0;
-    border-width: 44cqh 50cqw 0 50cqw;
-    border-color: #ede5cf transparent transparent transparent;
-    z-index: 3;
-    overflow: hidden;
-    /* Borde inferior de la solapa â€” lÃ­nea dorada */
-    filter: drop-shadow(0 3px 6px rgba(120,90,20,0.15));
-}
-
-/* PatrÃ³n interior visible en la solapa superior */
-.sobre-patron {
-    position: absolute;
-    /* TriÃ¡ngulo de ajuste para el pattern */
-    top: 0;
-    left: -50cqw;
-    width: 100cqw;
-    height: 44cqh;
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 8px,
-            rgba(180, 140, 30, 0.15) 8px,
-            rgba(180, 140, 30, 0.15) 9px
-        ),
-        repeating-linear-gradient(
-            -45deg,
-            transparent,
-            transparent 8px,
-            rgba(180, 140, 30, 0.15) 8px,
-            rgba(180, 140, 30, 0.15) 9px
-        );
-    pointer-events: none;
-}
-
-/* LÃ­nea de cierre de la solapa: borde dorado inferior */
-.sobre-flap-top::after {
-    content: '';
-    position: absolute;
-    /* LÃ­nea horizontal en la base del triÃ¡ngulo superior */
-    bottom: 0;
-    left: -50cqw;
-    width: 100cqw;
-    height: 1.5px;
-    background: linear-gradient(90deg, transparent 10%, #d4af37 30%, #f0dda0 50%, #d4af37 70%, transparent 90%);
-    transform: scaleX(0.9);
-}
-
-/* Borde perimetral dorado del sobre */
-.sobre-borde {
-    position: absolute;
-    inset: 0;
-    border: 2px solid var(--dorado);
-    border-radius: 3px;
-    pointer-events: none;
-    z-index: 10;
-}
-
-/* Esquinas ornamentales doradas */
-.sobre-borde::before,
-.sobre-borde::after {
-    content: '';
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border-color: #c9a227;
-    border-style: solid;
-    opacity: 0.7;
-}
-.sobre-borde::before {
-    bottom: 8px;
-    left: 8px;
-    border-width: 0 0 1.5px 1.5px;
-}
-.sobre-borde::after {
-    bottom: 8px;
-    right: 8px;
-    border-width: 0 1.5px 1.5px 0;
-}
-
-/* ---- SELLO DE CERA â€” sobre la solapa ---- */
+/* ---- SELLO DE CERA — sobre la solapa ---- */
 .splash-sello {
     position: absolute;
-    /* Centrado en el cruce de pliegues del sobre */
-    top: 50%;
+    /* Ubicado exactamente en la punta de la solapa superior (60% del alto) */
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(130px, 40cqw);
-    height: min(130px, 40cqw);
+    width: min(135px, 38cqw);
+    height: min(135px, 38cqw);
     z-index: 9;
     animation: sello-caer 1.6s cubic-bezier(0.34, 1.3, 0.64, 1) 0.4s both;
-    filter: drop-shadow(0 8px 20px rgba(80, 20, 20, 0.4))
-            drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+    filter: drop-shadow(0 8px 16px rgba(80, 20, 20, 0.35))
+            drop-shadow(0 3px 6px rgba(0,0,0,0.22));
 }
 
 @keyframes sello-caer {

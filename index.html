@@ -36,23 +36,59 @@
         
         <!-- El sobre completo, clickeable -->
         <div class="sobre" id="btn-abrir-invitacion" role="button" aria-label="Abrir invitación">
+            
+            <!-- Vector del sobre para definición perfecta y relieve en 3D -->
+            <svg class="sobre-vector" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Filtros para sombras realistas de papel -->
+                    <filter id="shadow-flap-top" x="-30%" y="-30%" width="160%" height="180%">
+                        <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#302008" flood-opacity="0.15"/>
+                        <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.1"/>
+                    </filter>
+                    <filter id="shadow-flap-base" x="-30%" y="-30%" width="160%" height="160%">
+                        <feDropShadow dx="0" dy="-2" stdDeviation="3" flood-color="#302008" flood-opacity="0.08"/>
+                    </filter>
+                    
+                    <!-- Gradientes para simular papel textura 3D limpia -->
+                    <linearGradient id="papel-interior" x1="150" y1="0" x2="150" y2="200" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#f5f4f0"/>
+                    </linearGradient>
+                    <linearGradient id="papel-lateral-izq" x1="0" y1="100" x2="150" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#faf9f6"/>
+                        <stop offset="100%" stop-color="#eae7e0"/>
+                    </linearGradient>
+                    <linearGradient id="papel-lateral-der" x1="300" y1="100" x2="150" y2="100" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#faf9f6"/>
+                        <stop offset="100%" stop-color="#eae7e0"/>
+                    </linearGradient>
+                    <linearGradient id="papel-solapa-top" x1="150" y1="0" x2="150" y2="120" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#f3efe6"/>
+                    </linearGradient>
+                    <linearGradient id="papel-base" x1="150" y1="200" x2="150" y2="110" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#faf9f5"/>
+                        <stop offset="100%" stop-color="#e3dfd5"/>
+                    </linearGradient>
+                </defs>
 
-            <!-- Cara frontal del sobre: lados y base -->
-            <div class="sobre-flap sobre-flap-izq"></div>
-            <div class="sobre-flap sobre-flap-der"></div>
-            <div class="sobre-flap sobre-flap-base"></div>
+                <!-- Fondo/Interior del sobre -->
+                <rect width="300" height="200" rx="4" fill="url(#papel-interior)" stroke="#d4af37" stroke-width="1.5"/>
+                <!-- Borde de marco interior del sobre -->
+                <rect x="6" y="6" width="288" height="188" rx="2" stroke="rgba(212, 175, 55, 0.3)" stroke-width="0.8" stroke-dasharray="3 3"/>
 
-            <!-- Solapa superior con el sello -->
-            <div class="sobre-flap sobre-flap-top">
-                <!-- Patrón interior de la solapa (estampado diagonal) -->
-                <div class="sobre-patron"></div>
-            </div>
+                <!-- Solapa Izquierda -->
+                <path d="M 0,0 L 150,100 L 0,200 Z" fill="url(#papel-lateral-izq)" stroke="#f4f1ea" stroke-width="0.5"/>
 
-            <!-- Interior visible del sobre (pattern) -->
-            <div class="sobre-interior"></div>
+                <!-- Solapa Derecha -->
+                <path d="M 300,0 L 150,100 L 300,200 Z" fill="url(#papel-lateral-der)" stroke="#f4f1ea" stroke-width="0.5"/>
 
-            <!-- Borde dorado perimetral -->
-            <div class="sobre-borde"></div>
+                <!-- Solapa Inferior/Base -->
+                <path d="M 0,200 L 150,110 L 300,200 Z" fill="url(#papel-base)" stroke="#ebe7de" stroke-width="0.5" filter="url(#shadow-flap-base)"/>
+
+                <!-- Solapa Superior/Flap Top (Overlap) -->
+                <path d="M 0,0 L 150,120 L 300,0 Z" fill="url(#papel-solapa-top)" stroke="#f2ede4" stroke-width="0.8" filter="url(#shadow-flap-top)"/>
+            </svg>
 
             <!-- Sello de cera sobre la solapa -->
             <div class="splash-sello">
