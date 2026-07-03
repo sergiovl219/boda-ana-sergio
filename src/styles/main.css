@@ -1,11 +1,11 @@
 /* ================================================
-   BODA ANA & SERGIO — Estilos Principales
+   BODA ANA & SERGIO â€” Estilos Principales
    ================================================ */
 
-/* --- VARIABLES DE DISEÑO --- */
+/* --- VARIABLES DE DISEÃ‘O --- */
 :root {
     --verde-esmeralda: #005A34; /* Verde esmeralda profundo */
-    --dorado: #D4AF37;          /* Dorado clásico */
+    --dorado: #D4AF37;          /* Dorado clÃ¡sico */
     --blanco: #FFFFFF;
     --texto-principal: #2C2C2C; /* Gris muy oscuro */
 }
@@ -28,7 +28,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- CONTENEDOR PRINCIPAL MÓVIL --- */
+/* --- CONTENEDOR PRINCIPAL MÃ“VIL --- */
 .mobile-container {
     width: 100%;
     max-width: 480px; 
@@ -80,7 +80,7 @@ body {
 }
 
 /* =========================================
-   1. HERO SECTION (DISEÑO REVISTA)
+   1. HERO SECTION (DISEÃ‘O REVISTA)
    ========================================= */
 .hero {
     height: 100vh;
@@ -165,7 +165,7 @@ body {
 }
 
 /* =========================================
-   2. BOTÓN FLOTANTE MÚSICA
+   2. BOTÃ“N FLOTANTE MÃšSICA
    ========================================= */
 .btn-musica-flotante {
     position: fixed;
@@ -283,7 +283,7 @@ p {
 .btn-mapa { display: inline-flex; align-items: center; justify-content: center; background-color: var(--verde-esmeralda); color: var(--blanco); text-decoration: none; padding: 8px 22px; border-radius: 25px; font-size: 0.85rem; font-weight: 400; letter-spacing: 1px; margin-bottom: 15px; gap: 8px; }
 .foto-timeline { width: 100%; border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 
-/* Tarjetas de información */
+/* Tarjetas de informaciÃ³n */
 .tarjetas-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
 .tarjeta-info { background-color: transparent; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 12px; padding: 25px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
 .icono-info { margin-bottom: 15px; display: inline-block; }
@@ -296,7 +296,7 @@ p {
 .icono-svg { width: 55px; height: 55px; }
 
 /* =========================================
-   5. BOTONES DE ACCIÓN
+   5. BOTONES DE ACCIÃ“N
    ========================================= */
 .btn-accion { 
     display: flex; align-items: center; justify-content: center; 
@@ -348,8 +348,10 @@ p {
 }
 
 /* =========================================
-   7. SPLASH DE BIENVENIDA (ESTILO CARTA CON SELLO)
+   7. SPLASH DE BIENVENIDA â€” SOBRE CLÃSICO
    ========================================= */
+
+/* Fondo de la pantalla: tono neutro suave */
 .splash-overlay {
     position: fixed;
     top: 0;
@@ -357,119 +359,42 @@ p {
     width: 100%;
     height: 100%;
     z-index: 10000;
-    background-color: #d6ded8;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* Fondo tipo papel de carta antiguo */
+    background: linear-gradient(145deg, #e8e0d0 0%, #d9cfc0 50%, #e2d9c8 100%);
     opacity: 1;
-    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
-    perspective: 1000px;
-}
-
-/* El fondo del sobre en sí (interior) */
-.envelope-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #e8e8e8;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.envelope-flap {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-.envelope-flap.top {
-    top: 0; left: 0;
-    border-width: 45vh 50vw 0 50vw;
-    border-color: #f2f2f2 transparent transparent transparent;
-    z-index: 4;
-}
-
-.envelope-flap.bottom {
-    bottom: 0; left: 0;
-    border-width: 0 50vw 55vh 50vw;
-    border-color: transparent transparent #ffffff transparent;
-    z-index: 3;
-}
-
-.envelope-flap.left {
-    top: 0; left: 0;
-    border-width: 50vh 0 50vh 50vw;
-    border-color: transparent transparent transparent #fafafa;
-    z-index: 2;
-}
-
-.envelope-flap.right {
-    top: 0; right: 0;
-    border-width: 50vh 50vw 50vh 0;
-    border-color: transparent #fafafa transparent transparent;
-    z-index: 2;
+    transition: opacity 0.8s ease-out;
 }
 
 .splash-overlay.splash-oculto {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-20px) scale(1.05);
 }
 
-/* La carta/invitación interior — fondo verde esmeralda oscuro */
-.splash-contenido {
-    text-align: center;
-    color: #faf6ec;
-    z-index: 5;
-    animation: splash-aparecer 1.2s ease-out;
-    background: 
-        linear-gradient(135deg, rgba(212,175,55,0.06) 0%, transparent 50%, rgba(212,175,55,0.06) 100%),
-        linear-gradient(180deg, #0e4028 0%, #0a3520 40%, #0e4028 100%);
-    border-radius: 4px;
-    max-width: 92%;
-    width: 380px;
+/* ---- EL SOBRE ---- */
+.sobre {
     position: relative;
-    box-shadow: 
-        0 20px 50px rgba(0,0,0,0.35),
-        0 5px 15px rgba(0,0,0,0.2);
-    border: 3px solid var(--dorado);
-    outline: 1px solid rgba(212,175,55,0.25);
-    outline-offset: 5px;
-    padding-top: 85px; /* Espacio para el sello que flota arriba */
+    width: min(320px, 85vw);
+    /* ProporciÃ³n clÃ¡sica de un sobre: ~3:2 */
+    aspect-ratio: 3 / 2;
+    cursor: pointer;
+    /* container-type necesario para las unidades cqh/cqw en las solapas */
+    container-type: size;
+    animation: sobre-aparecer 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    /* Sombra que da profundidad a un objeto fÃ­sico */
+    filter: drop-shadow(0 18px 35px rgba(80,60,20,0.25))
+            drop-shadow(0 6px 12px rgba(80,60,20,0.15));
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-/* Esquinas ornamentales doradas */
-.splash-contenido::before,
-.splash-contenido::after {
-    content: '';
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border-color: var(--dorado);
-    border-style: solid;
-    opacity: 0.5;
-    z-index: 2;
-}
-
-.splash-contenido::before {
-    top: 14px;
-    left: 14px;
-    border-width: 2px 0 0 2px;
-}
-
-.splash-contenido::after {
-    bottom: 14px;
-    right: 14px;
-    border-width: 0 2px 2px 0;
-}
-
-@keyframes splash-aparecer {
+@keyframes sobre-aparecer {
     from {
         opacity: 0;
-        transform: scale(0.92) translateY(40px);
+        transform: scale(0.88) translateY(30px);
     }
     to {
         opacity: 1;
@@ -477,110 +402,200 @@ p {
     }
 }
 
-/* ---- LISTÓN DORADO QUE ENVUELVE LA CARTA (EFECTO 3D) ---- */
-.carta-liston {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    height: 38px;
-    z-index: 7;
+.sobre:active {
+    transform: scale(0.97);
+    transition: transform 0.15s ease;
 }
 
-/* Centro del listón — frontal principal */
-.liston-centro {
+/* ---- BASE DEL SOBRE (rectÃ¡ngulo marfil) ---- */
+/* El sobre-interior actÃºa como la base visible */
+.sobre-interior {
     position: absolute;
-    left: -8px; /* Sobresale un poco de los lados para el doblez */
-    right: -8px;
-    height: 100%;
-    background: linear-gradient(180deg, 
-        #f0dda0 0%, 
-        #d4af37 15%, 
-        #c9a227 50%, 
-        #d4af37 85%, 
-        #f0dda0 100%
-    );
-    box-shadow: 
-        0 4px 10px rgba(0,0,0,0.3),
-        inset 0 1px 0 rgba(255,255,255,0.4),
-        inset 0 -1px 0 rgba(0,0,0,0.2);
-    /* Detalle de costura superior e inferior */
-    border-top: 1px solid rgba(255,255,255,0.3);
-    border-bottom: 1px solid rgba(140,104,0,0.4);
+    inset: 0;
+    border-radius: 3px;
+    /* Marfil cÃ¡lido con sutil gradiente de papel */
+    background: linear-gradient(160deg, #fdfaf3 0%, #f5eedb 40%, #faf5e8 100%);
+    border: 1.5px solid #d4af37;
+    overflow: hidden;
+}
+
+/* PatrÃ³n diagonal interior del sobre (lÃ­neas cruzadas doradas sutiles) */
+.sobre-interior::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 14px,
+            rgba(212, 175, 55, 0.07) 14px,
+            rgba(212, 175, 55, 0.07) 15px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 14px,
+            rgba(212, 175, 55, 0.07) 14px,
+            rgba(212, 175, 55, 0.07) 15px
+        );
+}
+
+/* Borde interior dorado (marco de carta) */
+.sobre-interior::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+/* ---- SOLAPAS DEL SOBRE (triÃ¡ngulos) ---- */
+.sobre-flap {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Solapa izquierda */
+.sobre-flap-izq {
+    top: 0;
+    left: 0;
+    border-width: 50cqh 0 50cqh 50cqw;
+    border-color: transparent transparent transparent #f0e8d0;
+    /* Sombra interna para dar profundidad */
+    filter: drop-shadow(2px 0 4px rgba(150,120,50,0.12));
+    z-index: 1;
+}
+
+/* Solapa derecha */
+.sobre-flap-der {
+    top: 0;
+    right: 0;
+    border-width: 50cqh 50cqw 50cqh 0;
+    border-color: transparent #f0e8d0 transparent transparent;
+    filter: drop-shadow(-2px 0 4px rgba(150,120,50,0.12));
+    z-index: 1;
+}
+
+/* Base inferior */
+.sobre-flap-base {
+    bottom: 0;
+    left: 0;
+    border-width: 0 50cqw 42cqh 50cqw;
+    border-color: transparent transparent #f5efde transparent;
+    filter: drop-shadow(0 -2px 6px rgba(120,90,20,0.1));
     z-index: 2;
 }
 
-/* Dobleces 3D (Triangulitos de sombra detrás de las esquinas del listón) */
-.liston-centro::before,
-.liston-centro::after {
+/* Solapa superior (la que se "dobla" con el sello) */
+.sobre-flap-top {
+    top: 0;
+    left: 0;
+    border-width: 44cqh 50cqw 0 50cqw;
+    border-color: #ede5cf transparent transparent transparent;
+    z-index: 3;
+    overflow: hidden;
+    /* Borde inferior de la solapa â€” lÃ­nea dorada */
+    filter: drop-shadow(0 3px 6px rgba(120,90,20,0.15));
+}
+
+/* PatrÃ³n interior visible en la solapa superior */
+.sobre-patron {
+    position: absolute;
+    /* TriÃ¡ngulo de ajuste para el pattern */
+    top: 0;
+    left: -50cqw;
+    width: 100cqw;
+    height: 44cqh;
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 8px,
+            rgba(180, 140, 30, 0.15) 8px,
+            rgba(180, 140, 30, 0.15) 9px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 8px,
+            rgba(180, 140, 30, 0.15) 8px,
+            rgba(180, 140, 30, 0.15) 9px
+        );
+    pointer-events: none;
+}
+
+/* LÃ­nea de cierre de la solapa: borde dorado inferior */
+.sobre-flap-top::after {
     content: '';
     position: absolute;
+    /* LÃ­nea horizontal en la base del triÃ¡ngulo superior */
+    bottom: 0;
+    left: -50cqw;
+    width: 100cqw;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent 10%, #d4af37 30%, #f0dda0 50%, #d4af37 70%, transparent 90%);
+    transform: scaleX(0.9);
+}
+
+/* Borde perimetral dorado del sobre */
+.sobre-borde {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--dorado);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Esquinas ornamentales doradas */
+.sobre-borde::before,
+.sobre-borde::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: #c9a227;
     border-style: solid;
-    z-index: 1;
-    bottom: -6px;
+    opacity: 0.7;
+}
+.sobre-borde::before {
+    bottom: 8px;
+    left: 8px;
+    border-width: 0 0 1.5px 1.5px;
+}
+.sobre-borde::after {
+    bottom: 8px;
+    right: 8px;
+    border-width: 0 1.5px 1.5px 0;
 }
 
-/* Sombra izquierda (apunta hacia abajo-derecha) */
-.liston-centro::before {
-    left: 0;
-    border-width: 6px 8px 0 0;
-    border-color: #5c4300 transparent transparent transparent;
-}
-
-/* Sombra derecha (apunta hacia abajo-izquierda) */
-.liston-centro::after {
-    right: 0;
-    border-width: 6px 0 0 8px;
-    border-color: #5c4300 transparent transparent transparent;
-}
-
-/* Cola izquierda del listón (detrás de la carta) */
-.liston-cola-izq {
-    position: absolute;
-    left: -26px;
-    top: 6px;
-    width: 22px;
-    height: 38px;
-    background: linear-gradient(180deg, #b88d1b, #8c6800);
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 40% 50%, 0 0);
-    z-index: -1; /* Va detrás del cuerpo de la carta */
-    filter: drop-shadow(-2px 2px 3px rgba(0,0,0,0.3));
-}
-
-/* Cola derecha del listón (detrás de la carta) */
-.liston-cola-der {
-    position: absolute;
-    right: -26px;
-    top: 6px;
-    width: 22px;
-    height: 38px;
-    background: linear-gradient(180deg, #b88d1b, #8c6800);
-    clip-path: polygon(0 0, 100% 0, 60% 50%, 100% 100%, 0 100%);
-    z-index: -1; /* Va detrás del cuerpo de la carta */
-    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
-}
-
-/* ---- SELLO DE CERA SOBRE EL LISTÓN ---- */
+/* ---- SELLO DE CERA â€” sobre la solapa ---- */
 .splash-sello {
     position: absolute;
-    top: 15px;
+    /* Centrado en el cruce de pliegues del sobre */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 135px;
-    height: 135px;
-    z-index: 8;
-    animation: sello-aparecer 1.5s ease-out 0.3s both;
-    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
+    transform: translate(-50%, -50%);
+    width: min(130px, 40cqw);
+    height: min(130px, 40cqw);
+    z-index: 9;
+    animation: sello-caer 1.6s cubic-bezier(0.34, 1.3, 0.64, 1) 0.4s both;
+    filter: drop-shadow(0 8px 20px rgba(80, 20, 20, 0.4))
+            drop-shadow(0 3px 6px rgba(0,0,0,0.25));
 }
 
-@keyframes sello-aparecer {
+@keyframes sello-caer {
     from {
         opacity: 0;
-        transform: translateX(-50%) scale(0.5) rotate(-15deg);
+        transform: translate(-50%, -50%) scale(0.4) rotate(-20deg);
     }
     to {
         opacity: 1;
-        transform: translateX(-50%) scale(1) rotate(0deg);
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
     }
 }
 
@@ -591,171 +606,36 @@ p {
     display: block;
 }
 
-/* ---- CUERPO DE LA CARTA (DEBAJO DEL LISTÓN) ---- */
-.carta-cuerpo {
-    padding: 25px 28px 35px;
-}
-
-/* Ornamentos dorados */
-.carta-ornamento-top,
-.carta-ornamento-bottom {
+/* ---- HINT DE TOQUE ---- */
+.sobre-hint {
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 0 5px 18px 5px;
-    animation: ornamento-fade 1.5s ease-out 0.6s both;
+    gap: 10px;
+    white-space: nowrap;
+    animation: hint-pulso 2.2s ease-in-out infinite 1.8s both;
 }
 
-.carta-ornamento-bottom {
-    margin-bottom: 22px;
-    margin-top: 5px;
+@keyframes hint-pulso {
+    0%, 100% { opacity: 0.55; transform: translateX(-50%) translateY(0); }
+    50%       { opacity: 0.9;  transform: translateX(-50%) translateY(-3px); }
 }
 
-@keyframes ornamento-fade {
-    from { opacity: 0; transform: scaleX(0.3); }
-    to { opacity: 1; transform: scaleX(1); }
-}
-
-.carta-filigrana {
-    color: var(--dorado);
-    font-size: 1.1rem;
-    opacity: 0.9;
-    line-height: 1;
-    text-shadow: 0 0 6px rgba(212, 175, 55, 0.3);
-}
-
-.carta-linea {
-    display: inline-block;
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--dorado) 30%, var(--dorado) 70%, transparent);
-    opacity: 0.55;
-}
-
-.splash-subtitulo {
+.sobre-hint-texto {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 400;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--dorado);
-    margin-bottom: 2px;
-    line-height: 1.5;
-}
-
-.splash-subtitulo-2 {
     letter-spacing: 3px;
-    margin-bottom: 12px;
-    font-weight: 300;
-    font-style: italic;
-    text-transform: lowercase;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.95rem;
-    color: rgba(212, 175, 55, 0.7);
-}
-
-.splash-nombres {
-    font-family: 'Indian', cursive;
-    font-size: 3.8rem;
-    font-weight: 400;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.splash-nombres span {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--dorado);
-    font-size: 2.4rem;
-    margin: 0 6px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Separador de diamante dorado */
-.carta-separador {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 15px;
-}
-
-.carta-sep-linea {
-    display: inline-block;
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--dorado), transparent);
-}
-
-.carta-sep-diamante {
-    color: var(--dorado);
-    font-size: 0.7rem;
-    opacity: 0.85;
-    text-shadow: 0 0 4px rgba(212, 175, 55, 0.3);
-}
-
-.splash-fecha {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: 4px;
-    color: var(--dorado);
-    margin-bottom: 5px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-}
-
-.splash-lugar {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.85rem;
-    font-style: italic;
-    font-weight: 400;
-    color: rgba(250, 246, 236, 0.65);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-.splash-boton {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 35px;
-    background: linear-gradient(135deg, #c9a227, #d4af37, #e3c362);
-    border: none;
-    color: #0a3520;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 2px;
     text-transform: uppercase;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    animation: splash-pulso 2.5s ease-in-out infinite;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+    color: #8c7040;
 }
 
-.splash-boton:hover,
-.splash-boton:active {
-    background: linear-gradient(135deg, #d4af37, #e3c362, #f0dda0);
-    color: #0a3520;
-    transform: scale(1.03);
-    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+.sobre-hint-linea {
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c9a227, transparent);
 }
-
-@keyframes splash-pulso {
-    0%, 100% { box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25); }
-    50% { box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25), 0 0 0 10px rgba(212, 175, 55, 0); }
-}
-
-.splash-nota {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: rgba(212, 175, 55, 0.5);
-    margin-top: 20px;
-    letter-spacing: 1px;
-}
-

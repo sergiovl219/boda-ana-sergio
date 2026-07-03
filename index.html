@@ -31,67 +31,43 @@
 
 <body>
 
-    <!-- SPLASH DE BIENVENIDA (necesario para autoplay de audio) -->
+    <!-- SPLASH DE BIENVENIDA — SOBRE CLÁSICO -->
     <div id="splash-bienvenida" class="splash-overlay">
-        <!-- Fondo de sobre -->
-        <div class="envelope-bg">
-            <div class="envelope-flap left"></div>
-            <div class="envelope-flap right"></div>
-            <div class="envelope-flap bottom"></div>
-            <div class="envelope-flap top"></div>
-        </div>
         
-        <div class="splash-contenido">
-            <!-- Listón dorado que envuelve la carta -->
-            <div class="carta-liston">
-                <div class="liston-cola-izq"></div>
-                <div class="liston-centro"></div>
-                <div class="liston-cola-der"></div>
+        <!-- El sobre completo, clickeable -->
+        <div class="sobre" id="btn-abrir-invitacion" role="button" aria-label="Abrir invitación">
+
+            <!-- Cara frontal del sobre: lados y base -->
+            <div class="sobre-flap sobre-flap-izq"></div>
+            <div class="sobre-flap sobre-flap-der"></div>
+            <div class="sobre-flap sobre-flap-base"></div>
+
+            <!-- Solapa superior con el sello -->
+            <div class="sobre-flap sobre-flap-top">
+                <!-- Patrón interior de la solapa (estampado diagonal) -->
+                <div class="sobre-patron"></div>
             </div>
 
-            <!-- Sello de cera sobre el listón -->
+            <!-- Interior visible del sobre (pattern) -->
+            <div class="sobre-interior"></div>
+
+            <!-- Borde dorado perimetral -->
+            <div class="sobre-borde"></div>
+
+            <!-- Sello de cera sobre la solapa -->
             <div class="splash-sello">
-                <img src="/assets/images/sello-carta.png" alt="Sello de cera Ana & Sergio" class="splash-sello-img">
+                <img src="/assets/images/sello-carta.png" alt="Sello Ana & Sergio" class="splash-sello-img">
             </div>
 
-            <!-- Contenido de la carta debajo del listón -->
-            <div class="carta-cuerpo">
-                <!-- Ornamento dorado superior -->
-                <div class="carta-ornamento-top">
-                    <span class="carta-linea"></span>
-                    <span class="carta-filigrana">✦</span>
-                    <span class="carta-linea"></span>
-                </div>
-
-                <p class="splash-subtitulo">Tienes el honor de ser invitado</p>
-                <p class="splash-subtitulo splash-subtitulo-2">a la boda de</p>
-                <h1 class="splash-nombres">Ana <span>&</span> Sergio</h1>
-                
-                <div class="carta-separador">
-                    <span class="carta-sep-linea"></span>
-                    <span class="carta-sep-diamante">◆</span>
-                    <span class="carta-sep-linea"></span>
-                </div>
-
-                <p class="splash-fecha">10 · Octubre · 2026</p>
-                <p class="splash-lugar">Pachuca de Soto, Hidalgo</p>
-
-                <!-- Ornamento dorado inferior -->
-                <div class="carta-ornamento-bottom">
-                    <span class="carta-linea"></span>
-                    <span class="carta-filigrana">✦</span>
-                    <span class="carta-linea"></span>
-                </div>
-
-                <button id="btn-abrir-invitacion" class="splash-boton">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                    Abrir Invitación
-                </button>
-                <p class="splash-nota">🎵 La invitación incluye música</p>
+            <!-- Indicador de toque (sutil, abajo del sobre) -->
+            <div class="sobre-hint">
+                <span class="sobre-hint-linea"></span>
+                <span class="sobre-hint-texto">Toca para abrir</span>
+                <span class="sobre-hint-linea"></span>
             </div>
+
         </div>
+
     </div>
 
     <!-- DEFINICIÓN DEL DIVISOR ROMÁNTICO (Corazón minimalista) -->
