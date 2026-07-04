@@ -311,19 +311,57 @@ p {
     background-color: rgba(255, 255, 255, 0.6); 
     color: var(--verde-esmeralda); 
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15); 
+    transition: all 0.3s ease;
 }
+.btn-liverpool svg {
+    stroke: var(--dorado);
+    transition: stroke 0.3s ease;
+}
+.btn-liverpool:hover {
+    background-color: #E6007E;
+    color: var(--blanco);
+    border-color: #E6007E;
+    box-shadow: 0 6px 20px rgba(230, 0, 126, 0.3);
+}
+.btn-liverpool:hover svg {
+    stroke: var(--blanco);
+}
+.btn-liverpool:active {
+    background-color: #B3005C;
+    border-color: #B3005C;
+}
+
 .btn-whatsapp { 
     background-color: var(--verde-esmeralda); 
     color: var(--blanco); 
     width: 100%;
+    border-color: var(--verde-esmeralda);
     box-shadow: 0 6px 15px rgba(0, 90, 52, 0.3); 
+    transition: all 0.3s ease;
+}
+.btn-whatsapp svg {
+    fill: var(--dorado);
+    transition: fill 0.3s ease;
+}
+.btn-whatsapp:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+.btn-whatsapp:hover svg {
+    fill: var(--blanco);
+}
+.btn-whatsapp:active {
+    background-color: #128C7E;
+    border-color: #128C7E;
 }
 
 /* Mensaje de pases */
-.mensaje-pases { margin: 30px 0; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 10px; border-left: 4px solid var(--dorado); text-align: center; }
-.mensaje-pases .nombre { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; color: var(--verde-esmeralda); }
-.mensaje-pases .texto { color: #000000; font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 1.1rem; line-height: 1.6; }
-.mensaje-pases b, .mensaje-pases strong { color: #000000; font-weight: 700; }
+.mensaje-pases { margin: 30px 0; padding: 25px 20px; background: rgba(255,255,255,0.75); border-radius: 15px; border-left: 4px solid var(--dorado); text-align: center; }
+.mensaje-pases .saludo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; color: #000000; margin-bottom: 12px; display: block; }
+.mensaje-pases .nombre { color: var(--verde-esmeralda); font-weight: 500; }
+.mensaje-pases .texto-lugares { font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 1.05rem; color: #000000; line-height: 1.5; display: block; }
+.mensaje-pases .texto-lugares strong { color: #000000; font-weight: 700; }
 
 /* =========================================
    6. FOOTER / SELLO
@@ -347,7 +385,8 @@ p {
     object-fit: cover;
     transform: scale(1.45);
     mix-blend-mode: multiply;
-    opacity: 0.9;
+    opacity: 1;
+    filter: contrast(1.7) brightness(0.8);
 }
 
 /* =========================================

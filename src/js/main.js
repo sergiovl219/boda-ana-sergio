@@ -163,11 +163,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Personalizar el texto y enlace
                     let textoLugares = "";
                     if (info.pases === 1) {
-                        textoLugares = `Hemos reservado <b>1 lugar</b> para ti.`;
+                        textoLugares = `Hemos reservado <strong>1 lugar</strong> para ti.`;
                     } else {
-                        textoLugares = `Hemos reservado <b>${info.pases} lugares</b> para ustedes.`;
+                        textoLugares = `Hemos reservado <strong>${info.pases} lugares</strong> para ustedes.`;
                     }
-                    textoPases.innerHTML = `<span class="texto">¡Hola, </span><span class="nombre">${info.nombre}</span><span class="texto">! <br><br> ${textoLugares}</span>`;
+                    textoPases.innerHTML = `
+                        <span class="saludo">¡Hola, <span class="nombre">${info.nombre}</span>!</span>
+                        <span class="texto-lugares">${textoLugares}</span>
+                    `;
                     
                     const mensaje = info.pases === 1 
                         ? `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaré mi lugar reservado para la boda el 10 de octubre. ¡Qué emoción!`
