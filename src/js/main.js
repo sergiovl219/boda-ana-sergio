@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Animar y ocultar el splash
         splashOverlay.classList.add('splash-oculto');
+        document.body.style.overflow = ''; // Restaurar el scroll al abrir
         splashOverlay.addEventListener('transitionend', () => {
             splashOverlay.style.display = 'none';
         });
@@ -162,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Personalizar el texto y enlace
                     let textoLugares = "";
                     if (info.pases === 1) {
-                        textoLugares = `Hemos reservado <span style="font-weight:700;">1 lugar</span> en tu honor.`;
+                        textoLugares = `Hemos reservado <span style="font-weight:700;">1 lugar</span> para ti.`;
                     } else {
                         textoLugares = `Hemos reservado <span style="font-weight:700;">${info.pases} lugares</span> para ustedes.`;
                     }
