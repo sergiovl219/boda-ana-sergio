@@ -331,8 +331,8 @@ p {
     padding: 10px 0 40px 0; 
 }
 .sello-cuadro {
-    width: 160px;
-    height: 160px;
+    width: min(480px, 90vw);
+    height: min(480px, 90vw);
     overflow: hidden;
     display: flex;
     align-items: center;
