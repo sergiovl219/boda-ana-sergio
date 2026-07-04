@@ -2,111 +2,133 @@
   "q8w9e2": {
     "nombre": "Mamito",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "m"
   },
   "r3t5y7": {
     "nombre": "Papi",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "u1i4o8": {
     "nombre": "Tía Chiquis",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "m"
   },
   "p6a2s5": {
     "nombre": "Familia Salazár Zúñiga",
     "pases": 3,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "d9f1g4": {
     "nombre": "Paulina",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "m"
   },
   "h7j3k6": {
     "nombre": "Beto",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "l2z8x5": {
     "nombre": "Familia García Flores",
     "pases": 3,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "c4v7b1": {
     "nombre": "Jose Manríquez",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "n9m2q5": {
-    "nombre": "Cinthya Rojas",
+    "nombre": "Cinthia Rojas",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "m"
   },
   "w3e6r8": {
     "nombre": "Javier Zúñiga",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "t1y4u9": {
     "nombre": "Coral Murillo",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "m"
   },
   "i7o2p5": {
     "nombre": "Alejandro Vázquez",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "a8s3d6": {
     "nombre": "Octavio Vazquez Marín y Familia",
     "pases": 3,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "f4g9h2": {
     "nombre": "Sandra Zúñiga Manriquez y Tristan Rodriguez Zúñiga",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "j1k5l8": {
     "nombre": "Dan Mejía",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "z6x9c3": {
     "nombre": "Carlos Eduardo Franco",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "v2b7n4": {
     "nombre": "Vicky Cornejo",
     "pases": 1,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "m"
   },
   "m5q1w8": {
     "nombre": "Karla Mejía y Marcopolo Altamirano",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "e3r6t9": {
     "nombre": "Juan Manuel",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   },
   "y2u7i4": {
     "nombre": "Bertha López Venegas y Jesus Adán",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "o5p8a1": {
     "nombre": "Lic Iraís Pérez Espinoza y Dr Miguel Ángel Islas",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "f"
   },
   "s4d9f2": {
     "nombre": "Dr José Antonio Arteaga",
     "pases": 2,
-    "contrayente": "ana"
+    "contrayente": "ana",
+    "tipo": "h"
   }
 }

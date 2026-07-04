@@ -132,6 +132,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     const textoPases = document.getElementById('texto-pases');
     const btnConfirmar = document.getElementById('btn-confirmar');
+    const tituloInvitado = document.getElementById('titulo-invitado');
+    const textoInvitado = document.getElementById('texto-invitado');
     
     // Números de WhatsApp: Ana 7711279279, Sergio 7712386266
     const TELEFONO_ANA = "5217711279279";
@@ -158,6 +160,18 @@ document.addEventListener("DOMContentLoaded", function() {
                         telefonoWhatsApp = TELEFONO_ANA;
                     } else {
                         telefonoWhatsApp = TELEFONO_SERGIO;
+                    }
+
+                    // Ajustar género/plural del bloque "Estás Invitado"
+                    if (info.tipo === 'm') {
+                        if (tituloInvitado) tituloInvitado.innerText = "Estás invitada";
+                        if (textoInvitado) textoInvitado.innerText = "Nos encantaría que seas parte de este momento tan especial para nosotros.";
+                    } else if (info.tipo === 'f') {
+                        if (tituloInvitado) tituloInvitado.innerText = "Están invitados";
+                        if (textoInvitado) textoInvitado.innerText = "Nos encantaría que sean parte de este momento tan especial para nosotros.";
+                    } else {
+                        if (tituloInvitado) tituloInvitado.innerText = "Estás invitado";
+                        if (textoInvitado) textoInvitado.innerText = "Nos encantaría que seas parte de este momento tan especial para nosotros.";
                     }
 
                     // Personalizar el texto y enlace
