@@ -1,12 +1,112 @@
 {
-  "k3h8d2": {
-    "nombre": "Familia Pérez",
-    "pases": 4,
+  "q8w9e2": {
+    "nombre": "Mamá",
+    "pases": 1,
     "contrayente": "ana"
   },
-  "m5j1s9": {
-    "nombre": "Sofía Rodríguez",
+  "r3t5y7": {
+    "nombre": "Papá",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "u1i4o8": {
+    "nombre": "Chiquis",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "p6a2s5": {
+    "nombre": "Familia Salazár Zúñiga",
+    "pases": 3,
+    "contrayente": "ana"
+  },
+  "d9f1g4": {
+    "nombre": "Paulina",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "h7j3k6": {
+    "nombre": "Beto",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "l2z8x5": {
+    "nombre": "Familia García Flores",
+    "pases": 3,
+    "contrayente": "ana"
+  },
+  "c4v7b1": {
+    "nombre": "Jose Manríquez",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "n9m2q5": {
+    "nombre": "Cinthia Rojas",
     "pases": 2,
-    "contrayente": "sergio"
+    "contrayente": "ana"
+  },
+  "w3e6r8": {
+    "nombre": "Javier Zúñiga",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "t1y4u9": {
+    "nombre": "Coral Murillo",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "i7o2p5": {
+    "nombre": "Alejandro Vázquez",
+    "pases": 2,
+    "contrayente": "ana"
+  },
+  "a8s3d6": {
+    "nombre": "Octavio Vazquez Marín y Familia",
+    "pases": 3,
+    "contrayente": "ana"
+  },
+  "f4g9h2": {
+    "nombre": "Sandra Zúñiga Manriquez y Tristan Rodriguez Zúñiga",
+    "pases": 2,
+    "contrayente": "ana"
+  },
+  "j1k5l8": {
+    "nombre": "Dan Mejía",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "z6x9c3": {
+    "nombre": "Carlos Eduardo Franco",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "v2b7n4": {
+    "nombre": "Vicky Cornejo",
+    "pases": 1,
+    "contrayente": "ana"
+  },
+  "m5q1w8": {
+    "nombre": "Karla Mejía y Marcopolo Altamirano",
+    "pases": 2,
+    "contrayente": "ana"
+  },
+  "e3r6t9": {
+    "nombre": "Juan Manuel",
+    "pases": 2,
+    "contrayente": "ana"
+  },
+  "y2u7i4": {
+    "nombre": "Bertha López Venegas y Jesus Adán",
+    "pases": 2,
+    "contrayente": "ana"
+  },
+  "o5p8a1": {
+    "nombre": "Lic Iraís y Dr Islas",
+    "pases": 2,
+    "contrayente": "ana"
+  },
+  "s4d9f2": {
+    "nombre": "Dr José Antonio Arteaga",
+    "pases": 2,
+    "contrayente": "ana"
   }
 }

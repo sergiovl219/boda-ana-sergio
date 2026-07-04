@@ -160,8 +160,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
 
                     // Personalizar el texto y enlace
-                    textoPases.innerHTML = `¡Hola, ${info.nombre}! <br> Tienen <span style="font-weight:700;">${info.pases} pases</span> reservados.`;
-                    const mensaje = `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaremos nuestros ${info.pases} pases para la boda el 10 de octubre. ¡Qué emoción!`;
+                    let textoLugares = "";
+                    if (info.pases === 1) {
+                        textoLugares = `Hemos reservado <span style="font-weight:700;">1 lugar</span> en tu honor.`;
+                    } else {
+                        textoLugares = `Hemos reservado <span style="font-weight:700;">${info.pases} lugares</span> para ustedes.`;
+                    }
+                    textoPases.innerHTML = `¡Hola, ${info.nombre}! <br> ${textoLugares}`;
+                    
+                    const mensaje = info.pases === 1 
+                        ? `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaré mi lugar reservado para la boda el 10 de octubre. ¡Qué emoción!`
+                        : `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaremos nuestros ${info.pases} lugares para la boda el 10 de octubre. ¡Qué emoción!`;
                     btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
                 } else {
                     configurarMensajeGenerico();
