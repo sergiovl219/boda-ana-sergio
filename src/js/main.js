@@ -124,32 +124,54 @@ document.addEventListener("DOMContentLoaded", function() {
     const intervaloContador = setInterval(actualizarContador, 1000);
 
     // =========================================
-    // 4. RSVP DINÁMICO (Query Parameters)
+    // 4. RSVP DINÁMICO (Query Parameters con Base JSON)
     // =========================================
     const parametrosURL = new URLSearchParams(window.location.search);
-    const nombreInvitado = parametrosURL.get('invitado');
-    const numPases = parametrosURL.get('pases');
-    const contrayente = parametrosURL.get('contrayente');
+    const idInvitado = parametrosURL.get('id');
     
     const textoPases = document.getElementById('texto-pases');
     const btnConfirmar = document.getElementById('btn-confirmar');
     
     // Números de WhatsApp: Ana 7711279279, Sergio 7712386266
-    let telefonoWhatsApp = "5217712386266"; // Por defecto Sergio
-    
-    if (contrayente && contrayente.toLowerCase() === 'ana') {
-        telefonoWhatsApp = "5217711279279";
-    } else if (contrayente && contrayente.toLowerCase() === 'sergio') {
-        telefonoWhatsApp = "5217712386266";
-    }
+    const TELEFONO_ANA = "5217711279279";
+    const TELEFONO_SERGIO = "5217712386266";
+    let telefonoWhatsApp = TELEFONO_SERGIO; // Por defecto Sergio
 
-    if (nombreInvitado && numPases) {
-        textoPases.innerHTML = `¡Hola, ${nombreInvitado}! <br> Tienen <span style="font-weight:700;">${numPases} pases</span> reservados.`;
-        const mensaje = `¡Hola! 🎉 Confirmo la asistencia de *${nombreInvitado}*. Usaremos nuestros ${numPases} pases para la boda el 10 de octubre. ¡Qué emoción!`;
-        btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-    } else {
+    function configurarMensajeGenerico() {
         textoPases.innerHTML = `¡Nos encantará verte ahí!`;
         const mensaje = `¡Hola! 🎉 Confirmo mi asistencia a la boda el 10 de octubre de 2026. ¡Qué emoción!`;
         btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+    }
+
+    if (idInvitado) {
+        fetch('/invitados.json')
+            .then(response => {
+                if (!response.ok) throw new Error("Error al obtener la lista de invitados");
+                return response.json();
+            })
+            .then(invitados => {
+                const info = invitados[idInvitado];
+                if (info) {
+                    // Determinar a quién se le envía la confirmación
+                    if (info.contrayente && info.contrayente.toLowerCase() === 'ana') {
+                        telefonoWhatsApp = TELEFONO_ANA;
+                    } else {
+                        telefonoWhatsApp = TELEFONO_SERGIO;
+                    }
+
+                    // Personalizar el texto y enlace
+                    textoPases.innerHTML = `¡Hola, ${info.nombre}! <br> Tienen <span style="font-weight:700;">${info.pases} pases</span> reservados.`;
+                    const mensaje = `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaremos nuestros ${info.pases} pases para la boda el 10 de octubre. ¡Qué emoción!`;
+                    btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+                } else {
+                    configurarMensajeGenerico();
+                }
+            })
+            .catch(error => {
+                console.error("Error cargando los datos de personalización:", error);
+                configurarMensajeGenerico();
+            });
+    } else {
+        configurarMensajeGenerico();
     }
 });
