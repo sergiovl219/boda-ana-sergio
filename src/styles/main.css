@@ -225,15 +225,43 @@ body {
 }
 
 .card {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.93);
     backdrop-filter: blur(8px);
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 105px 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     border: 1px solid rgba(255,255,255,0.5);
     text-align: center;
 }
-
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    aspect-ratio: 500 / 138;
+    background-image: url('/assets/images/marco-floral.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    pointer-events: none;
+    z-index: 2;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    aspect-ratio: 500 / 130;
+    background-image: url('/assets/images/marco-floral.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    pointer-events: none;
+    z-index: 2;
+}
 .card-gris { background-color: rgba(245, 245, 245, 0.95); }
 
 h2 { 
