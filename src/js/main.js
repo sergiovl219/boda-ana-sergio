@@ -187,8 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     `;
 
                     const mensaje = info.pases === 1
-                        ? `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaré mi lugar reservado para la boda el 10 de octubre. ¡Qué emoción!`
-                        : `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaremos nuestros ${info.pases} lugares para la boda el 10 de octubre. ¡Qué emoción!`;
+                        ? `¡Hola! Soy *${info.nombre}*. Muchas gracias por la invitación. Confirmo mi asistencia con mucho gusto, utilizaré mi pase para acompañarlos y celebrar su unión.`
+                        : `¡Hola! Somos *${info.nombre}*. Muchas gracias por la invitación. Confirmamos nuestra asistencia con mucho gusto, utilizaremos nuestros ${info.pases} pases para acompañarlos y celebrar su unión.`;
                     btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
                 } else {
                     configurarMensajeGenerico();
