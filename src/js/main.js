@@ -8,8 +8,8 @@
  * - RSVP dinámico por query params (?invitado=Nombre&pases=2)
  */
 
-document.addEventListener("DOMContentLoaded", function() {
-    
+document.addEventListener("DOMContentLoaded", function () {
+
     // =========================================
     // 1. LÓGICA DE MÚSICA
     // =========================================
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    btnMusica.addEventListener('click', function(e) {
+    btnMusica.addEventListener('click', function (e) {
         e.preventDefault();
         alternarMusica();
     });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     btnAbrir.addEventListener('click', abrirInvitacion);
-    btnAbrir.addEventListener('touchend', function(e) {
+    btnAbrir.addEventListener('touchend', function (e) {
         e.preventDefault();
         abrirInvitacion();
     });
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 3. CUENTA REGRESIVA
     // =========================================
     const fechaBoda = new Date("October 10, 2026 17:30:00").getTime();
-    
+
     function actualizarContador() {
         const ahora = new Date().getTime();
         const distancia = fechaBoda - ahora;
@@ -129,12 +129,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // =========================================
     const parametrosURL = new URLSearchParams(window.location.search);
     const idInvitado = parametrosURL.get('id');
-    
+
     const textoPases = document.getElementById('texto-pases');
     const btnConfirmar = document.getElementById('btn-confirmar');
     const tituloInvitado = document.getElementById('titulo-invitado');
     const textoInvitado = document.getElementById('texto-invitado');
-    
+
     // Números de WhatsApp: Ana 7711279279, Sergio 7712386266
     const TELEFONO_ANA = "5217711279279";
     const TELEFONO_SERGIO = "5217712386266";
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (textoInvitado) textoInvitado.innerText = "Nos encantaría que seas parte de este momento tan especial para nosotros.";
                     } else if (info.tipo === 'f') {
                         if (tituloInvitado) tituloInvitado.innerText = "Están invitados";
-                        if (textoInvitado) textoInvitado.innerText = "Nos encantaría que sean parte de este momento tan especial para nosotros.";
+                        if (textoInvitado) textoInvitado.innerText = "Nos encantaría que fueran parte de este momento tan especial para nosotros.";
                     } else {
                         if (tituloInvitado) tituloInvitado.innerText = "Estás invitado";
                         if (textoInvitado) textoInvitado.innerText = "Nos encantaría que seas parte de este momento tan especial para nosotros.";
@@ -185,8 +185,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <span class="saludo">¡Hola, <span class="nombre">${info.nombre}</span>!</span>
                         <span class="texto-lugares">${textoLugares}</span>
                     `;
-                    
-                    const mensaje = info.pases === 1 
+
+                    const mensaje = info.pases === 1
                         ? `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaré mi lugar reservado para la boda el 10 de octubre. ¡Qué emoción!`
                         : `¡Hola! 🎉 Confirmo la asistencia de *${info.nombre}*. Usaremos nuestros ${info.pases} lugares para la boda el 10 de octubre. ¡Qué emoción!`;
                     btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
