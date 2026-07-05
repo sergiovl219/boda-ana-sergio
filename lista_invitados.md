@@ -1,9 +1,7 @@
 # Lista de Invitados y URLs
 
-- **Familia Pérez**: [https://boda-ana-sergio.vercel.app/?id=k3h8d2](https://boda-ana-sergio.vercel.app/?id=k3h8d2)
-- **Sofía Rodríguez**: [https://boda-ana-sergio.vercel.app/?id=m5j1s9](https://boda-ana-sergio.vercel.app/?id=m5j1s9)
-- **Mamá**: [https://boda-ana-sergio.vercel.app/?id=q8w9e2](https://boda-ana-sergio.vercel.app/?id=q8w9e2)
-- **Papá**: [https://boda-ana-sergio.vercel.app/?id=r3t5y7](https://boda-ana-sergio.vercel.app/?id=r3t5y7)
+- **Mamito**: [https://boda-ana-sergio.vercel.app/?id=q8w9e2](https://boda-ana-sergio.vercel.app/?id=q8w9e2)
+- **Papi**: [https://boda-ana-sergio.vercel.app/?id=r3t5y7](https://boda-ana-sergio.vercel.app/?id=r3t5y7)
 - **Chiquis**: [https://boda-ana-sergio.vercel.app/?id=u1i4o8](https://boda-ana-sergio.vercel.app/?id=u1i4o8)
 - **Familia Salazár Zúñiga**: [https://boda-ana-sergio.vercel.app/?id=p6a2s5](https://boda-ana-sergio.vercel.app/?id=p6a2s5)
 - **Paulina**: [https://boda-ana-sergio.vercel.app/?id=d9f1g4](https://boda-ana-sergio.vercel.app/?id=d9f1g4)
