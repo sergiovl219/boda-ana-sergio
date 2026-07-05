@@ -130,5 +130,137 @@
     "pases": 2,
     "contrayente": "ana",
     "tipo": "h"
+  },
+  "v4r1l9": {
+    "nombre": "Familia Vargas López",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "c8l2a5": {
+    "nombre": "Carlos López y Apolonia Huerta",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "f2l7g3": {
+    "nombre": "Familia López González",
+    "pases": 4,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "g9n4r6": {
+    "nombre": "Familia González Narez",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "v1p5c8": {
+    "nombre": "Familia Vargas Pelcastre",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "v6d2r9": {
+    "nombre": "Familia Vargas Del Razo",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "l5m8y1": {
+    "nombre": "Familia López Mayorga",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "s3h7e4": {
+    "nombre": "Sandra Herrera",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "i9g2z6": {
+    "nombre": "Itzel González",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "v8j1u5": {
+    "nombre": "Virgian y Juan",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "s4l6d9": {
+    "nombre": "Familia Soto Landaverde",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "r2a7c5": {
+    "nombre": "Familia Ruiz Acatenco",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "d5r8o1": {
+    "nombre": "Daniela Rodriguez",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "m1f4c7": {
+    "nombre": "Maricarmen Falcón",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "y6m3r2": {
+    "nombre": "Yulisa Marín",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "m7b9h4": {
+    "nombre": "Maribel Mata y Byron Huerta",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "d2t6l8": {
+    "nombre": "Daniel Tolentino",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "h"
+  },
+  "z3d5n1": {
+    "nombre": "Familia Zamora Daniel",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "m9h2r6": {
+    "nombre": "Melissa Hernández",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "h1r4v7": {
+    "nombre": "Familia Hernández Rivera",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "d8v5l3": {
+    "nombre": "Daniela Villeda",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "m"
+  },
+  "r4b1c9": {
+    "nombre": "Ricardo Blancas",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "h"
   }
 }
