@@ -176,19 +176,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Personalizar el texto y enlace
                     let textoLugares = "";
+                    let mensaje = "";
+                    
                     if (info.pases === 1) {
                         textoLugares = `Hemos reservado <strong>1 lugar</strong> para ti.`;
+                        mensaje = `¡Hola! Soy *${info.nombre}*. Muchas gracias por la invitación. Confirmo mi asistencia con mucho gusto, utilizaré mi pase para acompañarlos y celebrar su unión.`;
                     } else {
-                        textoLugares = `Hemos reservado <strong>${info.pases} lugares</strong> para ustedes.`;
+                        if (info.tipo === 'f') {
+                            textoLugares = `Hemos reservado <strong>${info.pases} lugares</strong> para ustedes.`;
+                            mensaje = `¡Hola! Somos *${info.nombre}*. Muchas gracias por la invitación. Confirmamos nuestra asistencia con mucho gusto, utilizaremos nuestros ${info.pases} pases para acompañarlos y celebrar su unión.`;
+                        } else {
+                            textoLugares = `Hemos reservado <strong>${info.pases} lugares</strong> para ti.`;
+                            mensaje = `¡Hola! Soy *${info.nombre}*. Muchas gracias por la invitación. Confirmo mi asistencia con mucho gusto, utilizaré mis ${info.pases} pases para acompañarlos y celebrar su unión.`;
+                        }
                     }
                     textoPases.innerHTML = `
                         <span class="saludo">¡Hola, <span class="nombre">${info.nombre}</span>!</span>
                         <span class="texto-lugares">${textoLugares}</span>
                     `;
 
-                    const mensaje = info.pases === 1
-                        ? `¡Hola! Soy *${info.nombre}*. Muchas gracias por la invitación. Confirmo mi asistencia con mucho gusto, utilizaré mi pase para acompañarlos y celebrar su unión.`
-                        : `¡Hola! Somos *${info.nombre}*. Muchas gracias por la invitación. Confirmamos nuestra asistencia con mucho gusto, utilizaremos nuestros ${info.pases} pases para acompañarlos y celebrar su unión.`;
                     btnConfirmar.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensaje)}`;
                 } else {
                     configurarMensajeGenerico();

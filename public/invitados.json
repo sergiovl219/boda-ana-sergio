@@ -1,15 +1,9 @@
 {
   "q8w9e2": {
-    "nombre": "Mamito",
-    "pases": 1,
+    "nombre": "Familia Zúñiga Manriquez",
+    "pases": 2,
     "contrayente": "ana",
-    "tipo": "m"
-  },
-  "r3t5y7": {
-    "nombre": "Papi",
-    "pases": 1,
-    "contrayente": "ana",
-    "tipo": "h"
+    "tipo": "f"
   },
   "u1i4o8": {
     "nombre": "Tía Chiquis",
@@ -151,25 +145,25 @@
   },
   "g9n4r6": {
     "nombre": "Familia González Narez",
-    "pases": 3,
+    "pases": 2,
     "contrayente": "sergio",
     "tipo": "f"
   },
   "v1p5c8": {
     "nombre": "Familia Vargas Pelcastre",
-    "pases": 3,
+    "pases": 2,
     "contrayente": "sergio",
     "tipo": "f"
   },
   "v6d2r9": {
     "nombre": "Familia Vargas Del Razo",
-    "pases": 3,
+    "pases": 2,
     "contrayente": "sergio",
     "tipo": "f"
   },
   "l5m8y1": {
     "nombre": "Familia López Mayorga",
-    "pases": 3,
+    "pases": 4,
     "contrayente": "sergio",
     "tipo": "f"
   },
