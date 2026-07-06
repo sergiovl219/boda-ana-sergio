@@ -336,20 +336,20 @@ p {
 .btn-accion:active { transform: scale(0.97); }
 
 .btn-liverpool { 
-    background-color: rgba(255, 255, 255, 0.6); 
-    color: var(--verde-esmeralda); 
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15); 
+    background-color: #E6007E; 
+    color: var(--blanco); 
+    border-color: #E6007E;
+    box-shadow: 0 4px 15px rgba(230, 0, 126, 0.3); 
     transition: all 0.3s ease;
 }
 .btn-liverpool svg {
-    stroke: var(--dorado);
+    stroke: var(--blanco);
     transition: stroke 0.3s ease;
 }
 .btn-liverpool:hover {
-    background-color: #E6007E;
-    color: var(--blanco);
-    border-color: #E6007E;
-    box-shadow: 0 6px 20px rgba(230, 0, 126, 0.3);
+    background-color: #C2006A;
+    border-color: #C2006A;
+    box-shadow: 0 6px 20px rgba(230, 0, 126, 0.4);
 }
 .btn-liverpool:hover svg {
     stroke: var(--blanco);
