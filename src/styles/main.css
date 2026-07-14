@@ -1,11 +1,12 @@
 /* ================================================
-   BODA ANA & SERGIO â€” Estilos Principales
+   BODA ANA & SERGIO — Estilos Principales
    ================================================ */
 
-/* --- VARIABLES DE DISEÃ‘O --- */
+/* --- VARIABLES DE DISEÑO --- */
 :root {
     --verde-esmeralda: #005A34; /* Verde esmeralda profundo */
-    --dorado: #D4AF37;          /* Dorado clÃ¡sico */
+    --dorado: #D4AF37;          /* Dorado clásico */
+    --dorado-opaco: #A68A3F;    /* Dorado opaco/antiguo */
     --blanco: #FFFFFF;
     --texto-principal: #2C2C2C; /* Gris muy oscuro */
 }
@@ -286,12 +287,38 @@ p {
     display: block; 
 }
 
+.fecha-destacada {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: var(--verde-esmeralda);
+    background: linear-gradient(90deg, #d8cb9a, #bfae73, #d8cb9a);
+    margin: 35px -25px 20px -25px;
+    padding: 14px 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(191, 174, 115, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(133, 118, 66, 0.4);
+    display: block;
+}
+
+.fecha-destacada::before,
+.fecha-destacada::after {
+    display: none;
+}
+
+.fecha-destacada::after {
+    transform: scaleX(-1);
+}
+
 /* =========================================
    4. ELEMENTOS INTERNOS DE CARDS
    ========================================= */
 
 /* Contador Regresivo */
-.contador-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; padding: 20px 10px; background-color: transparent; border: 1px solid rgba(0, 90, 52, 0.15); border-radius: 15px; }
+.contador-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 auto 10px auto; padding: 15px 5px; max-width: 92%; background-color: transparent; border: 1px solid rgba(0, 90, 52, 0.15); border-radius: 15px; }
 .contador-item { display: flex; flex-direction: column; align-items: center; position: relative; }
 .contador-item:not(:last-child)::after { content: ':'; position: absolute; right: -8px; top: 10px; font-size: 2rem; color: var(--dorado); font-family: 'Playfair Display', serif; }
 .contador-numero { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--verde-esmeralda); line-height: 1; }
@@ -303,7 +330,7 @@ p {
 .evento { position: relative; padding-left: 55px; margin-bottom: 45px; }
 .evento:last-child { margin-bottom: 0; }
 .evento::before { content: ''; position: absolute; left: 13px; top: 6px; width: 12px; height: 12px; background-color: var(--verde-esmeralda); border: 2px solid var(--blanco); border-radius: 50%; box-shadow: 0 0 0 2px var(--dorado); z-index: 2; }
-.evento-hora { font-family: 'Montserrat', sans-serif; color: var(--dorado); font-style: normal; font-size: 1.3rem; font-weight: 600; margin-bottom: 5px; line-height: 1.1; }
+.evento-hora { font-family: 'Montserrat', sans-serif; color: var(--dorado-opaco); font-style: normal; font-size: 1.3rem; font-weight: 600; margin-bottom: 5px; line-height: 1.1; }
 .evento-titulo { font-weight: 500; color: var(--verde-esmeralda); font-size: 1.2rem; margin-bottom: 8px; }
 .evento-lugar { font-size: 0.95rem; margin-bottom: 12px; line-height: 1.4; font-weight: 300; }
 
@@ -319,7 +346,7 @@ p {
 .resaltado { color: var(--verde-esmeralda); font-weight: 500; }
 
 /* Clases de texto destacado */
-.lugar-destacado { font-family: 'Playfair Display', serif; color: var(--dorado); font-weight: 600; font-size: 1.1rem; font-style: italic; }
+.lugar-destacado { font-family: 'Playfair Display', serif; color: var(--dorado-opaco); font-weight: 600; font-size: 1.1rem; font-style: italic; }
 .color-redvelvet { font-family: 'Playfair Display', serif; color: #8C1C2A; font-weight: 600; font-size: 1.1rem; font-style: italic; }
 .icono-svg { width: 55px; height: 55px; }
 
