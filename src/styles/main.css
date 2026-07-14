@@ -289,10 +289,10 @@ p {
 
 .fecha-destacada {
     font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     text-transform: uppercase;
     letter-spacing: 4px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--verde-esmeralda);
     background: linear-gradient(90deg, #d8cb9a, #bfae73, #d8cb9a);
     margin: 35px -25px 20px -25px;
