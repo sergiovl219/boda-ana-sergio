@@ -45,4 +45,4 @@
 - **Daniela Villeda**: [https://boda-ana-sergio.vercel.app/?id=d8v5l3](https://boda-ana-sergio.vercel.app/?id=d8v5l3)
 - **Ricardo Blancas**: [https://boda-ana-sergio.vercel.app/?id=r4b1c9](https://boda-ana-sergio.vercel.app/?id=r4b1c9)
 - **Jimm Robb**: [https://boda-ana-sergio.vercel.app/?id=j3r7b2](https://boda-ana-sergio.vercel.app/?id=j3r7b2)
-- **Sheyla**: [https://boda-ana-sergio.vercel.app/?id=s9h2y6](https://boda-ana-sergio.vercel.app/?id=s9h2y6)
+- **Sheila**: [https://boda-ana-sergio.vercel.app/?id=s9h2y6](https://boda-ana-sergio.vercel.app/?id=s9h2y6)
