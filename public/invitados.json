@@ -180,7 +180,7 @@
     "tipo": "m"
   },
   "v8j1u5": {
-    "nombre": "Virgian y Juan",
+    "nombre": "Virginia y Juan",
     "pases": 2,
     "contrayente": "sergio",
     "tipo": "f"
@@ -256,5 +256,17 @@
     "pases": 1,
     "contrayente": "sergio",
     "tipo": "h"
+  },
+  "j3r7b2": {
+    "nombre": "Jimm Robb",
+    "pases": 1,
+    "contrayente": "sergio",
+    "tipo": "h"
+  },
+  "s9h2y6": {
+    "nombre": "Sheyla",
+    "pases": 2,
+    "contrayente": "sergio",
+    "tipo": "m"
   }
 }
