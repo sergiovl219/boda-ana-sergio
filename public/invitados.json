@@ -268,5 +268,17 @@
     "pases": 1,
     "contrayente": "sergio",
     "tipo": "m"
+  },
+  "l4l8p2": {
+    "nombre": "Familia López López",
+    "pases": 3,
+    "contrayente": "sergio",
+    "tipo": "f"
+  },
+  "s8l4p6": {
+    "nombre": "Familia Salgado López",
+    "pases": 4,
+    "contrayente": "sergio",
+    "tipo": "f"
   }
 }
